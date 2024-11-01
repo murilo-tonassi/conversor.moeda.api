@@ -38,7 +38,7 @@ document.getElementById('currency-form').addEventListener('submit', async functi
         const conversao = document.getElementById('conversao');
         conversao.textContent = ´Resultado: ${converteValue.toFixed(2)}$(paraMoeda)´;
     }else{
-        alert('Erro ao buscar a cotação. Tente novamente.')
+        alert('Erro ao buscar a cotação. Tente novamente.');
     }
    
 })

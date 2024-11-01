@@ -14,9 +14,31 @@ async function geExchangeRate(daMoeda, paraMoeda){
         }else{
             throw new Error('Erro ao buscar as taxas de câmbio');
         }
-    }catch{
-
+    }catch {error}{
+        console.error{"Erro", error};
+        return null;
     }
+
 }
 
 // xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+document.getElementById('currency-form').addEventListener('submit', async function (event){
+    event.preventDefault();
+ 
+    const valor = parseFloat(document.getElementById('amount').value);
+    const daMoeda = docuemnt.getElementById('daMoeda').value;
+    const paraMoeda = document.getElementById('paraMoeda').value;
+    //Busca taxa e câmbio API
+    const exchangerate = getExchangeRate(daMoeda, paraMoeda);
+ 
+    if(ExchangeRate){
+        const converteValue = valor * exchangerate;
+ 
+        // Exibir resultado
+        const conversao = document.getElementById('conversao');
+        conversao.textContent = ´Resultado: ${converteValue.toFixed(2)}$(paraMoeda)´;
+    }else{
+        alert('Erro ao buscar a cotação. Tente novamente.');
+    }
+   
+})

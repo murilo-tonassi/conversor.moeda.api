@@ -1,1 +1,6 @@
-# conversor.moeda.api
+# Conversor de moedas API
+
+## Introdução 
+Este projeto é uma aplicação web para conversão de moedas em tempo real, desenvolvida com HTML5, CSS3 e JavaScript puro. Seu principal objetivo é permitir ao usuário converter valores entre diferentes moedas, usando cotações atualizadas através de uma integração com uma API de câmbio. Com essa API, a aplicação acessa as taxas de conversão em tempo real, refletindo as variações do mercado e proporcionando resultados precisos para o usuário.
+ 
+Este projeto é uma evolução de um trabalho anterior e foca em melhorar a precisão e a funcionalidade do sistema de conversão, garantindo atualizações dinâmicas das taxas de câmbio e uma interface intuitiva para o usuário final.

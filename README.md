@@ -5,6 +5,8 @@ Este projeto é uma aplicação web para conversão de moedas em tempo real, des
  
 Este projeto é uma evolução de um trabalho anterior e foca em melhorar a precisão e a funcionalidade do sistema de conversão, garantindo atualizações dinâmicas das taxas de câmbio e uma interface intuitiva para o usuário final.
 
+<img src="conversor.api.png">
+
 ## Funcionalidades
 
 - const apiKey = `e97064e0a15ceefc5ce3d309`;

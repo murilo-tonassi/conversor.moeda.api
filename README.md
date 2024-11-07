@@ -7,6 +7,57 @@ Este projeto é uma evolução de um trabalho anterior e foca em melhorar a prec
 
 ## Funcionalidades
 
+- const apiKey = `e97064e0a15ceefc5ce3d309`;
+- const apiURL = `https://v6.exchangerate-api.com/v6/${apiKey}/latest/`;
+ 
+Aqui, configuramos a chave da API (apiKey) e a URL base da API de câmbio (apiURL). A chave é necessária para acessar os dados e a URL define o endereço principal para as requisições de câmbio.<hr>
+ 
+- async function getExchangeRate(daMoeda, paraMoeda) {
+    try {
+        const response = await fetch(`${apiURL}${daMoeda}`);
+        const data = await response.json();
+ 
+A função getExchangeRate é responsável por buscar a taxa de câmbio entre duas moedas. Ela usa fetch() para requisitar os dados da API e converte a resposta para JSON.<hr>
+ 
+
+- if (data.result === "success") {
+            return data.conversion_rates[paraMoeda];
+        } else {
+            throw new Error("Erro ao buscar as taxas de câmbio");
+        }
+    } catch (error) {
+        console.error("Erro:", error);
+        return null;
+    }
+}
+ 
+Depois de obter os dados da API, o código verifica se a resposta foi bem-sucedida (data.result === "success"). Se sim, retorna a taxa de câmbio para a moeda de destino; se não, exibe um erro no console e retorna null.<hr>
+ 
+- document.getElementById('currency-form').addEventListener('submit', async function(event) {
+    event.preventDefault();
+ 
+Aqui, o código configura um evento de submit no formulário currency-form. O event.preventDefault() impede que a página seja recarregada ao enviar o formulário.<hr>
+ 
+- const valor = parseFloat(document.getElementById('amount').value);
+    const daMoeda = document.getElementById('daMoeda').value;
+    const paraMoeda = document.getElementById('paraMoeda').value;
+ 
+Essas linhas capturam o valor digitado para conversão (amount), a moeda de origem (daMoeda) e a moeda de destino (paraMoeda). parseFloat() converte o valor inserido para um número decimal.<hr>
+ 
+- const exchangeRate = await getExchangeRate(daMoeda, paraMoeda);
+ 
+Aqui, o código chama a função getExchangeRate para obter a taxa de câmbio atual entre as moedas selecionadas. Com await, ele aguarda o retorno da função antes de continuar.<hr>
+ 
+- if (exchangeRate) {
+        const convertedValue = valor * exchangeRate;
+        const conversao = document.getElementById('result');
+        conversao.textContent = `Resultado: ${convertedValue.toFixed(2)} ${paraMoeda}`;
+    } else {
+        alert("Erro ao buscar a cotação. Tente novamente.");
+    }
+});
+ 
+Se a taxa de câmbio foi obtida, o código calcula o valor convertido e exibe o resultado na tela. Se houve algum erro na obtenção da taxa, uma mensagem de alerta é mostrada ao usuário.<hr>
 
 ## Fontes consultadas
 - API de câmbio: 

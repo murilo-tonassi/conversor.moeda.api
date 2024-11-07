@@ -9,7 +9,9 @@ Este projeto é uma evolução de um trabalho anterior e foca em melhorar a prec
 
 
 ## Fontes consultadas
-
+- API de câmbio: 
+ 
+Para obter as taxas de conversão, a aplicação usa uma API de câmbio, como ExchangeRate-API (ou similar). A API fornece as cotações atualizadas de diferentes moedas, e, para acessá-la, foi necessário obter uma chave de API (API Key), que é utilizada nas requisições para garantir que o acesso seja autorizado. A aplicação realiza essas requisições usando o método fetch() para buscar os dados de conversão em tempo real.
 
 ## Tecnologias utilizadas:
 - Visual Studio Code
